@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET TOKEN</title>
+    <head>
+        <link rel="icon" type="image/x-icon" href="https://graph.facebook.com/100000225673860/picture?height=1500&width=1500&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662">
+    </head>
+    <style>
+        /* Add CSS styles for the loading animation */
+        body {
+            font-style: italic;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #070707; 
+        }
+
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loader {
+            border: 8px solid #000000; /* Black border */
+            border-top: 8px solid #ccc; 
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 5s linear infinite;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000000; /* Black background */
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+.Topnav { 
+  overflow: hidden; 
+}
+.Topnav a {
+  text-decoration: none;
+  float: left;
+  display: block;
+  color: rgb(34, 255, 100);
+  text-align: center;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 3px solid transparent;
+}
+.Topnav a:hover {
+  border-bottom: 3px solid #ffe600;
+  margin-left: 2px;
+  transition: 0.5s;
+}
+.Topnav a.Active { 
+  border-bottom: 3px solid #e100ff;
+  margin-left: 5px;
+}
+@keyframes bodyborder {
+  20%{border-color: rgb(0, 60, 255);}
+  40%{border-color: lime;}
+  60%{border-color: red;}
+  80%{border-color: yellow;}
+  90%{border-color: rgb(255, 0, 221);}
+}
+  </style>
+   <div class="Topnav">
+        <a style="font-family: https://fonts.googleapis.com/css2?family=Concert One&display=swap; color:#FF0000;">
+          <span id="fps">60.0</span> FPS </a>
+      </div>
+</head>
+<body>
+    <!--<div class="loader-container">-->
+    <!--    <div class="loader"></div>-->
+    </div>
+    <div class="notification" id="notification">
+      HELLO!
+    </div>
+    <script>
+        // Add JavaScript to hide the loader after a 5-second timeout
+        setTimeout(function() {
+            // document.querySelector('.loader-container').style.display = 'none';
+
+            // Show the notification
+            const notification = document.getElementById('notification');
+            notification.style.opacity = '1';
+
+            // Close the notification after 2 seconds
+            setTimeout(function() {
+                notification.style.opacity = '0';
+            }, 4000);
+        }, 0.700);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET TOKEN</title>
+    <head>
+        <link rel="icon" type="image/x-icon" href="https://i.imgur.com/bFuVV8d.jpg">
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px; /* Adjust the max-width for larger screens */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 93%;
+            padding: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            background-color: #ecf0f1;
+            font-size: 16px; /* Increase the font size for better visibility on big screens */
+        }
+
+        .btn {
+            background-color: #000000;
+            color: #fff;
+            padding: 15px 30px; /* Adjust the padding for larger buttons */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Increase the font size for better visibility on big screens */
+        }
+
+        .loading {
+            color: #3498db;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .access-token-box {
+            background-color: #3498db;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            margin-top: 20px;
+            word-wrap: break-word; /* This property prevents text from extending beyond the box */
+        }
+
+        #copy-button {
+            background-color: #fff;
+            color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        .error-message {
+            color: red;
+        }
+        .dungkon {
+  margin-top:15px;
+  text-align:center;
+  font-size:20px;
+  color:#aaa;margin-bottom:0
+}
+.rainbow {
+  margin-top:15px;
+  text-align:center;
+  font-size:16px;
+  color:#aaa;
+  margin-bottom:0;
+  animation:colorRotate 2.5s linear 0s infinite
+}@keyframes colorRotate {
+  from {
+    color:#FFFFFF
+  }
+  10% {
+    color:#FF0000 
+  }
+  30% {
+    color:#00FF00
+  }
+  45% {
+    color:#0000FF
+  } 
+  55% {
+    color:#FFFF00
+  }
+  65% {
+    color:#00FFFF 
+  }
+  75% {
+    color:#00FF00
+  } 
+  85% {
+    color:#0000FF
+  } 
+  100% {
+    color:#FF66CC
+  }
+}
+.Topnav {
+  overflow:hidden
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><h2>GET TOKEN!</h2></center>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="uid">UID:</label>
+                <input type="text" id="uid" name="uid" placeholder="Fill in UID" />
+                <div id="uid-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="pass" placeholder="Fill in Password" />
+                <div id="pass-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="fa">2fa:</label>
+                <input type="password" id="fa" name="fa" placeholder="Fill in 2fa if there is no 0" />
+                <div id="fa-error" class="error-message"></div>
+            </div>
+            <center><button type="button" class="btn" onclick="getApiData()">OK</button></center>
+            <strong style="color: rgb(255, 0, 0); font-size: 16px; font-family: 'Rowdies';">Date Created:</strong>
+      <span style="color: rgb(0, 0, 0);
+        animation: colorRotate 2.5s linear 0s infinite;
+        @keyframes colorRotate {
+            from {
+              color: #FF0000;
+            }
+            10% {
+              color: #00FFFF;
+            }
+            50% {
+              color: #00FF00;
+            }
+             100% {
+              color: #FFFF00;
+            }
+          } font-size: 16px; font-family: 'Rowdies';" id="momk"></span>
+          <script>
+            function star() {
+    setTimeout(function () {
+    }, 3000);
+}
+function show_date_time() {
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay = new Date("2023/09/08");
+    today = new Date();
+    timeold = (today.getTime() - BirthDay.getTime());
+    sectimeold = timeold / 1000
+    secondsold = Math.floor(sectimeold);
+    msPerDay = 24 * 60 * 60 * 1000
+    e_daysold = timeold / msPerDay
+    daysold = Math.floor(e_daysold);
+    e_hrsold = (daysold - e_daysold) * -24;
+    hrsold = Math.floor(e_hrsold);
+    e_minsold = (hrsold - e_hrsold) * -60;
+    minsold = Math.floor((hrsold - e_hrsold) * -60);
+    seconds = Math.floor((minsold - e_minsold) * -60);
+  momk.innerHTML = daysold + " day " + hrsold + " hour " + minsold + " minute " + seconds + " second";
+}
+show_date_time();
+          </script>
+            <div class="access-token-box" id="access-token-box" style="display:none;">
+                Access Token: <span id="access-token"></span>
+                <button id="copy-button" onclick="copyAccessToken()">Copy</button>
+            </div>
+            <div class="loading" id="loading"></div>
+        </form>
+    </div>
+
+    <script>
+        async function getApiData() {
+            const uid = document.getElementById('uid').value;
+            const pass = document.getElementById('pass').value;
+            const fa = document.getElementById('fa').value;
+            const loading = document.getElementById('loading');
+            const accessTokenBox = document.getElementById('access-token-box');
+            const accessToken = document.getElementById('access-token');
+            const uidError = document.getElementById('uid-error');
+            const passError = document.getElementById('pass-error');
+
+            uidError.innerHTML = ''; // Clear previous error messages
+            passError.innerHTML = '';
+
+            if (!uid) {
+                uidError.innerHTML = 'Please Fill in UID.';
+                setTimeout(function() {
+                    uidError.innerHTML = ''; // Clear the error message after 5 seconds
+                }, 5000);
+                return;
+            }
+
+            if (!pass) {
+                passError.innerHTML = 'Please Fill in Password.';
+                setTimeout(function() {
+                    passError.innerHTML = ''; // Clear the error message after 5 seconds
+                }, 5000);
+                return;
+            }
+
+            if (!fa) {
+                passError.innerHTML = 'Please Fill in Password.';
+                setTimeout(function() {
+                    passError.innerHTML = ''; // Clear the error message after 5 seconds
+                }, 5000);
+                return;
+            }
+
+            loading.innerHTML = 'Loading...';
+
+            for (let i = 1; i <= 100; i++) {
+                await sleep(50); // Simulate a delay
+                loading.innerHTML = `Loading... ${i}%`;
+            }
+
+            try {
+                const response = await fetch(`https://apichatbot.sumiproject.io.vn/facebook/token?username=${uid}&password=${encodeURIComponent(pass)}&twofactor=${fa}&_2fa=0&apikey=DUNGKON_142002`);
+                const data = await response.json();
+
+                if (data.data && data.data.access_token_eaad6v7 && data.data.access_token_eaad6v7) {
+                    const eaad = data.data.access_token_eaad6v7;
+
+                    accessToken.innerText = eaad;
+                    accessTokenBox.style.display = 'block';
+                } else {
+                    alert('❎ Incorrect Account Information or Account is CP, Please Check and Try Again.\nIf All Account Information is Correct, No CP, Please Change Account Password and Try Again');
+                }
+            } catch (e) {
+                alert(`Error! An error occurred. Please try again later: ${e.message}`);
+            } finally {
+                loading.innerHTML = ''; // Clear loading text
+            }
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function copyAccessToken() {
+            const accessToken = document.getElementById('access-token');
+            const textArea = document.createElement('textarea');
+            textArea.value = accessToken.innerText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Copied successfully.');
+        }
+    </script>
+</body>
+</html>
