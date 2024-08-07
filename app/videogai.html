@@ -247,7 +247,7 @@
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), videoTimeout);
-        const url = 'https://shoti-srv1.onrender.com/api/v1/get';
+        const url = 'https://shoti-server-v2.onrender.com/api/v1/get';
         const rawResponse = await fetch(url, {
           method: 'POST',
           headers: {
